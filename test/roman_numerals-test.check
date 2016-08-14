@@ -52,3 +52,6 @@
     ck_assert_ptr_eq(add("MMMCMXCIX", NULL), NULL);
     ck_assert_ptr_eq(add(NULL, "I"), NULL);
     ck_assert_ptr_eq(add(NULL, NULL), NULL);
+
+#test subtracts_roman_numerals
+    ck_assert_str_eq(subtract("V", "IV"), "I");
