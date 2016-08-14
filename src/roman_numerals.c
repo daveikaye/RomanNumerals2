@@ -32,8 +32,16 @@ int to_arabic(char *roman)
     int roman_length = strlen(roman);
 
     while(i < roman_length) {
-        arabic += roman_letter_to_arabic_number(roman[i]);
+        int number = roman_letter_to_arabic_number(roman[i]);
         i++;
+
+        int nextNumber = roman_letter_to_arabic_number(roman[i]);
+        if (nextNumber > number) {
+            number = nextNumber - number;
+            i++;
+        }
+
+        arabic += number;
     }
 
     return arabic;
