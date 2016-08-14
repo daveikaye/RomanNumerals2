@@ -19,12 +19,22 @@ int roman_letter_to_arabic_number(char roman_letter) {
             return 500;
         case 'M':
             return 1000;
+        default:
+            return -1;
     }
 
 }
 
 int to_arabic(char *roman)
 {
+    int i = 0;
+    int arabic = 0;
+    int roman_length = strlen(roman);
 
-    return roman_letter_to_arabic_number(roman[0]);
+    while(i < roman_length) {
+        arabic += roman_letter_to_arabic_number(roman[i]);
+        i++;
+    }
+
+    return arabic;
 }
