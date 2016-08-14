@@ -12,3 +12,10 @@
 
     ck_assert_int_eq(to_arabic("II"), 2);
     ck_assert_int_eq(to_arabic("IV"), 4);
+
+    ck_assert_int_eq(to_arabic("MMMCMXCIX"), 3999);
+
+    //Check error conditions
+    ck_assert_int_eq(to_arabic("MMMCMXCX"), -1);
+    ck_assert_int_eq(to_arabic(""), -1);
+    ck_assert_int_eq(to_arabic(NULL), -1);
