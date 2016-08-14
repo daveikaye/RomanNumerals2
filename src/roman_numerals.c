@@ -56,3 +56,8 @@ int to_arabic(char *roman)
 
     return arabic <= 3999 && arabic > 0 ? arabic : -1;
 }
+
+char* to_roman(int arabic) {
+
+    return "I";
+}
