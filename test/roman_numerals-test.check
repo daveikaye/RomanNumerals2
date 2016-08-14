@@ -1,0 +1,4 @@
+#include "src/roman_numerals.h"
+
+#test converts_to_arabic
+	ck_assert_int_eq(to_arabic("I"), 1);
