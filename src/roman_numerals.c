@@ -86,24 +86,27 @@ char *to_roman(int arabic) {
     return roman;
 }
 
-char* add(char* roman1, char* roman2) {
+char* add_or_subtract(char* roman1, char* roman2, int should_add) {
     int arabic1 = to_arabic(roman1);
     int arabic2 = to_arabic(roman2);
 
     if (arabic1 > 0 && arabic2 > 0) {
-        return to_roman(arabic1 + arabic2);
+        int arabic_result = should_add ? arabic1 + arabic2 : arabic1 - arabic2;
+
+        return to_roman(arabic_result);
     }
 
     return NULL;
 }
 
+char* add(char* roman1, char* roman2) {
+    const int should_add = 1;
+
+    return add_or_subtract(roman1, roman2, should_add);
+}
+
 char* subtract(char* roman1, char* roman2) {
-    int arabic1 = to_arabic(roman1);
-    int arabic2 = to_arabic(roman2);
+    const int should_add = 0;
 
-    if (arabic1 > 0 && arabic2 > 0) {
-        return to_roman(arabic1 - arabic2);
-    }
-
-    return NULL;
+    return add_or_subtract(roman1, roman2, should_add);
 }
