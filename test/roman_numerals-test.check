@@ -55,3 +55,8 @@
 
 #test subtracts_roman_numerals
     ck_assert_str_eq(subtract("V", "IV"), "I");
+
+    //Check error conditions
+    ck_assert_ptr_eq(subtract("IV", "IV"), NULL);
+    ck_assert_ptr_eq(subtract("IV", "V"), NULL);
+    ck_assert_ptr_eq(subtract("IV", NULL), NULL);

@@ -98,6 +98,12 @@ char* add(char* roman1, char* roman2) {
 }
 
 char* subtract(char* roman1, char* roman2) {
+    int arabic1 = to_arabic(roman1);
+    int arabic2 = to_arabic(roman2);
 
-    return to_roman(to_arabic(roman1) - to_arabic(roman2));
+    if (arabic1 > 0 && arabic2 > 0) {
+        return to_roman(arabic1 - arabic2);
+    }
+
+    return NULL;
 }
