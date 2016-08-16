@@ -57,7 +57,7 @@ int to_arabic(char *roman)
     return arabic <= 3999 && arabic > 0 ? arabic : -1;
 }
 
-char* concat_strings(char* target, char* source) {
+char* concat_strings(char* target, const char* source) {
     target = target == NULL ? malloc(sizeof(source)+1) : realloc(target, sizeof(source)+sizeof(target)+1);
 
     strcat(target, source);
@@ -76,7 +76,8 @@ char *to_roman(int arabic) {
 
     char *roman = NULL;
 
-    for (int i = 0; i < sizeof(numbers)/sizeof(int); i++) {
+    int i=0;
+    for (i = 0; i < sizeof(numbers)/sizeof(int); i++) {
         while (arabic >= numbers[i]) {
             roman = concat_strings(roman, letters[i]);
             arabic -= numbers[i];
