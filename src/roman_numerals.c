@@ -58,9 +58,12 @@ int to_arabic(char *roman)
 }
 
 char* concat_strings(char* target, const char* source) {
-    target = target == NULL ? malloc(sizeof(source)+1) : realloc(target, sizeof(source)+sizeof(target)+1);
-
-    strcat(target, source);
+    if (target == NULL) {
+        target = malloc(20);
+        strcpy(target, source);
+    } else{
+        strcat(target, source);
+    }
 
     return target;
 }
