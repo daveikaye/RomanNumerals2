@@ -1,6 +1,6 @@
 CFLAGS=-Wall
 LIBS=-lcheck
-COMPILER=gcc-4.8
+COMPILER=gcc
 
 all: romannumerals
 
