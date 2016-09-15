@@ -2,8 +2,10 @@
 #include <stdlib.h>
 
 static char* concat_strings(char* target, const char* source) {
+    const int MAX_MEMORY_NEEDED = 20;
+
     if (target == NULL) {
-        target = malloc(20);
+        target = malloc(MAX_MEMORY_NEEDED);
         strcpy(target, source);
     } else{
         strcat(target, source);

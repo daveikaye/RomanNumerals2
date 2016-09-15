@@ -2,25 +2,33 @@
 #include <stdlib.h>
 
 static int roman_letter_to_arabic_number(char roman_letter) {
+    const int I_ARABIC_VALUE = 1;
+    const int V_ARABIC_VALUE = 5;
+    const int X_ARABIC_VALUE = 10;
+    const int L_ARABIC_VALUE = 50;
+    const int C_ARABIC_VALUE = 100;
+    const int D_ARABIC_VALUE = 500;
+    const int M_ARABIC_VALUE = 1000;
+    const int INVALID_ARABIC_VALUE = -1;
 
     switch(roman_letter) {
 
         case 'I'  :
-            return 1;
+            return I_ARABIC_VALUE;
         case 'V':
-            return 5;
+            return V_ARABIC_VALUE;
         case 'X':
-            return 10;
+            return X_ARABIC_VALUE;
         case 'L':
-            return 50;
+            return L_ARABIC_VALUE;
         case 'C':
-            return 100;
+            return C_ARABIC_VALUE;
         case 'D':
-            return 500;
+            return D_ARABIC_VALUE;
         case 'M':
-            return 1000;
+            return M_ARABIC_VALUE;
         default:
-            return -1;
+            return INVALID_ARABIC_VALUE;
     }
 
 }
