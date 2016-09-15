@@ -21,3 +21,6 @@ implementation-test.o: implementation-test.c src/roman_numerals.h
 
 implementation-test.c: test/roman_numerals-test.check
 	checkmk test/roman_numerals-test.check >implementation-test.c
+
+clean:
+	$(RM) *.o *.c romannumerals-test
