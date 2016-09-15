@@ -1,6 +1,3 @@
-#include "src/roman_numerals.h"
-#include "src/to_roman_converter.h"
-
 #test converts_to_arabic
 	ck_assert_int_eq(to_arabic("I"), 1);
 	ck_assert_int_eq(to_arabic("I"), 1);
@@ -20,29 +17,6 @@
     ck_assert_int_eq(to_arabic("MMMCMXCX"), -1);
     ck_assert_int_eq(to_arabic(""), -1);
     ck_assert_int_eq(to_arabic(NULL), -1);
-
-
-#test converts_to_roman
-    ck_assert_str_eq(to_roman(1), "I");
-    ck_assert_str_eq(to_roman(2), "II");
-    ck_assert_str_eq(to_roman(4), "IV");
-    ck_assert_str_eq(to_roman(5), "V");
-    ck_assert_str_eq(to_roman(9), "IX");
-    ck_assert_str_eq(to_roman(10), "X");
-    ck_assert_str_eq(to_roman(40), "XL");
-    ck_assert_str_eq(to_roman(50), "L");
-    ck_assert_str_eq(to_roman(90), "XC");
-    ck_assert_str_eq(to_roman(100), "C");
-    ck_assert_str_eq(to_roman(400), "CD");
-    ck_assert_str_eq(to_roman(500), "D");
-    ck_assert_str_eq(to_roman(900), "CM");
-    ck_assert_str_eq(to_roman(1000), "M");
-    ck_assert_str_eq(to_roman(3999), "MMMCMXCIX");
-
-    //Check error conditions
-    ck_assert_ptr_eq(to_roman(-1), NULL);
-    ck_assert_ptr_eq(to_roman(-0), NULL);
-    ck_assert_ptr_eq(to_roman(4000), NULL);
 
 #test adds_roman_numerals
     ck_assert_str_eq(add("IV", "V"), "IX");

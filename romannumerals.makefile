@@ -19,8 +19,8 @@ romannumerals-test: implementation-test.o roman_numerals.o
 implementation-test.o: implementation-test.c
 	$(COMPILER) $(CFLAGS) -c implementation-test.c
 
-implementation-test.c: test/roman_numerals-test.check
-	checkmk test/roman_numerals-test.check >implementation-test.c
+implementation-test.c:
+	checkmk test/*.check >implementation-test.c
 
 clean:
 	$(RM) *.o *.c romannumerals-test
