@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int roman_letter_to_arabic_number(char roman_letter) {
+static int roman_letter_to_arabic_number(char roman_letter) {
 
     switch(roman_letter) {
 
@@ -25,7 +25,7 @@ int roman_letter_to_arabic_number(char roman_letter) {
 
 }
 
-int roman_digit_to_arabic(char *roman, int* i_ptr, int roman_length) {
+static int roman_digit_to_arabic(char *roman, int* i_ptr, int roman_length) {
     int number = roman_letter_to_arabic_number(roman[*i_ptr]);
     (*i_ptr)++;
 
@@ -57,7 +57,7 @@ int to_arabic(char *roman)
     return arabic <= 3999 && arabic > 0 ? arabic : -1;
 }
 
-char* concat_strings(char* target, const char* source) {
+static char* concat_strings(char* target, const char* source) {
     if (target == NULL) {
         target = malloc(20);
         strcpy(target, source);
@@ -90,7 +90,7 @@ char *to_roman(int arabic) {
     return roman;
 }
 
-char* add_or_subtract(char* roman1, char* roman2, int should_add) {
+static char* add_or_subtract(char* roman1, char* roman2, int should_add) {
     int arabic1 = to_arabic(roman1);
     int arabic2 = to_arabic(roman2);
 
