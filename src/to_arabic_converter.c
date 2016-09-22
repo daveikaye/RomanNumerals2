@@ -57,7 +57,7 @@ int to_arabic(char *roman)
 
     int i = 0;
     int arabic = 0;
-    int roman_length = strlen(roman);
+    int roman_length = (int) strlen(roman);
     while(i < roman_length) {
         arabic += roman_digit_to_arabic(roman, &i, roman_length);
     }
