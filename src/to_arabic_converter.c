@@ -55,9 +55,24 @@ int to_arabic(char *roman)
         return -1;
     }
 
-    int i = 0;
-    int arabic = 0;
     int roman_length = (int) strlen(roman);
+    int i = 0;
+    int iCounter = 0;
+    while(i < roman_length) {
+        if (roman[i] == 'I') {
+            iCounter++;
+            if(iCounter == 4) {
+                return -1;
+            }
+        } else {
+            iCounter = 0;
+        }
+
+        i++;
+    }
+
+    int arabic = 0;
+    i = 0;
     while(i < roman_length) {
         arabic += roman_digit_to_arabic(roman, &i, roman_length);
     }
