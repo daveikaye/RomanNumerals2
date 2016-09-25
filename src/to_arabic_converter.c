@@ -1,5 +1,5 @@
 #include <string.h>
-#include <stdlib.h>
+#include "roman_numeral_validator.h"
 
 static int roman_letter_to_arabic_number(char roman_letter) {
     const int I_ARABIC_VALUE = 1;
@@ -55,24 +55,14 @@ int to_arabic(char *roman)
         return -1;
     }
 
-    int roman_length = (int) strlen(roman);
-    int i = 0;
-    int iCounter = 0;
-    while(i < roman_length) {
-        if (roman[i] == 'I') {
-            iCounter++;
-            if(iCounter == 4) {
-                return -1;
-            }
-        } else {
-            iCounter = 0;
-        }
+    if (!is_roman_numeral_valid(roman)) {
 
-        i++;
+        return -1;
     }
 
+    int roman_length = (int) strlen(roman);
     int arabic = 0;
-    i = 0;
+    int i = 0;
     while(i < roman_length) {
         arabic += roman_digit_to_arabic(roman, &i, roman_length);
     }

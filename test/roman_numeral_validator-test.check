@@ -1,0 +1,2 @@
+#test convert_to_arabic_returns_negative_one_when_roman_contains_four_Is_in_a_row
+    ck_assert_int_eq(to_arabic("IIII"), -1);
