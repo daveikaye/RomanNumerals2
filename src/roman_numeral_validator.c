@@ -18,6 +18,11 @@ bool is_roman_numeral_valid(char *roman) {
     }
 
     int roman_length = (int) strlen(roman);
+    if (roman_length == 0) {
+
+        return false;
+    }
+
     int i = 0;
     int iCounter = 0;
     while(i < roman_length) {
