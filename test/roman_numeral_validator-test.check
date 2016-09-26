@@ -5,3 +5,6 @@
 
 #test is_roman_numeral_valid_returns_false_when_roman_contains_four_Is_in_a_row
     ck_assert_ptr_eq(is_roman_numeral_valid("IIII"), false);
+
+#test is_roman_numeral_valid_returns_false_when_roman_contains_four_Xs_in_a_row
+    ck_assert_ptr_eq(is_roman_numeral_valid("XXXX"), false);

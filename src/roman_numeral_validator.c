@@ -35,20 +35,20 @@ bool is_roman_numeral_valid(char *roman) {
     }
 
     int i = 0;
-    int iCounter = 0;
+    int fourCounter = 0;
     while(i < roman_length) {
         if (!is_valid_roman_letter(roman[i])) {
 
             return false;
         }
 
-        if (roman[i] == 'I') {
-            iCounter++;
-            if(iCounter == 4) {
+        if (roman[i] == 'I' || roman[i] == 'X') {
+            fourCounter++;
+            if(fourCounter == 4) {
                 return false;
             }
         } else {
-            iCounter = 0;
+            fourCounter = 0;
         }
 
         i++;
