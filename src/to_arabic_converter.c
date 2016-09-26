@@ -19,11 +19,6 @@ static int roman_digit_to_arabic(char *roman, int* i_ptr, int roman_length) {
 
 int to_arabic(char *roman)
 {
-    if (roman == NULL) {
-
-        return -1;
-    }
-
     if (!is_roman_numeral_valid(roman)) {
 
         return -1;

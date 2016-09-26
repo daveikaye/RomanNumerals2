@@ -3,6 +3,11 @@
 #include <stdbool.h>
 
 bool is_roman_numeral_valid(char *roman) {
+    if (roman == NULL) {
+
+        return false;
+    }
+
     int roman_length = (int) strlen(roman);
     int i = 0;
     int iCounter = 0;
