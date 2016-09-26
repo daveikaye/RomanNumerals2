@@ -2,8 +2,17 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool is_roman_numeral_valid(char *roman) {
+static bool basic_roman_numeral_validation_passed(char* roman) {
     if (roman == NULL) {
+
+        return false;
+    }
+
+    return true;
+}
+
+bool is_roman_numeral_valid(char *roman) {
+    if (!basic_roman_numeral_validation_passed(roman)) {
 
         return false;
     }
