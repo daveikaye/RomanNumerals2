@@ -1,0 +1,20 @@
+#test converts_I_to_arabic
+	ck_assert_int_eq(roman_letter_to_arabic_number('I'), 1);
+
+#test converts_V_to_arabic
+	ck_assert_int_eq(roman_letter_to_arabic_number('V'), 5);
+
+#test converts_X_to_arabic
+    ck_assert_int_eq(roman_letter_to_arabic_number('X'), 10);
+
+#test converts_L_to_arabic
+    ck_assert_int_eq(roman_letter_to_arabic_number('L'), 50);
+
+#test converts_C_to_arabic
+    ck_assert_int_eq(roman_letter_to_arabic_number('C'), 100);
+
+#test converts_D_to_arabic
+    ck_assert_int_eq(roman_letter_to_arabic_number('D'), 500);
+
+#test converts_M_to_arabic
+    ck_assert_int_eq(roman_letter_to_arabic_number('M'), 1000);

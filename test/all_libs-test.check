@@ -3,3 +3,4 @@
 #include "src/to_roman_converter.h"
 #include "src/to_arabic_converter.h"
 #include "src/roman_numeral_validator.h"
+#include "src/roman_letter_to_arabic_number_converter.h"
