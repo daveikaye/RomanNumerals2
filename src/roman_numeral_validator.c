@@ -22,6 +22,21 @@ static bool is_valid_roman_letter(char roman_letter) {
     return true;
 }
 
+static bool is_contains_all_valid_roman_letters(char *roman) {
+    int i = 0;
+    int roman_length = (int) strlen(roman);
+    while(i < roman_length) {
+        if (!is_valid_roman_letter(roman[i])) {
+
+            return false;
+        }
+
+        i++;
+    }
+
+    return true;
+}
+
 bool is_roman_numeral_valid(char *roman) {
     if (!basic_roman_numeral_validation_passed(roman)) {
 
@@ -34,24 +49,8 @@ bool is_roman_numeral_valid(char *roman) {
         return false;
     }
 
-    int i = 0;
-    int fourCounter = 0;
-    while(i < roman_length) {
-        if (!is_valid_roman_letter(roman[i])) {
-
-            return false;
-        }
-
-        if (roman[i] == 'I' || roman[i] == 'X') {
-            fourCounter++;
-            if(fourCounter == 4) {
-                return false;
-            }
-        } else {
-            fourCounter = 0;
-        }
-
-        i++;
+    if (!is_contains_all_valid_roman_letters(roman)){
+        return false;
     }
 
     return true;

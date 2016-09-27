@@ -30,3 +30,24 @@
 
 #test convert_to_arabic_returns_negative_one_when_roman_is_greater_than_max
     ck_assert_int_eq(to_arabic("MMMCMXCX"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_sequence_of_roman_letters_is_invalid
+    ck_assert_int_eq(to_arabic("IXI"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_four_Is_in_a_row
+    ck_assert_int_eq(to_arabic("IIII"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_four_Xs_in_a_row
+    ck_assert_int_eq(to_arabic("XXXX"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_four_Cs_in_a_row
+    ck_assert_int_eq(to_arabic("CCCC"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_two_Vs_in_a_row
+    ck_assert_int_eq(to_arabic("VV"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_two_Ls_in_a_row
+    ck_assert_int_eq(to_arabic("LL"), -1);
+
+#test convert_to_arabic_returns_negative_one_when_there_are_two_Ds_in_a_row
+    ck_assert_int_eq(to_arabic("DD"), -1);
