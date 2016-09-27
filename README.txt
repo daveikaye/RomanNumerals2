@@ -11,6 +11,11 @@ It consists of:
    - subtracts roman numeral roman2 from roman numeral roman1.
    - returns the difference as a roman numeral or NULL if the difference or its component is invalid (per kata's definition).
 
+Addition and subtraction can only be performed on valid roman numerals.  In case one of the roman numerals is invalid, NULL is returned.
+For a roman numeral to be valid, both of the below conditions must be met:
+1.  All roman letters must be valid (e.g. MM is valid, while MA is not).
+2.  The sequence of roman letters must be valid (e.g. IV is valid, while IIV is not).
+
 This kata was solved using TDD.
 The solution consists of three components:
    1.  Conversion to Arabic from Roman numerals.
