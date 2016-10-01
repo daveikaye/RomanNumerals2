@@ -5,7 +5,8 @@ static char* concat_strings(char* target, const char* source) {
     const int MAX_MEMORY_NEEDED = 20;
 
     if (target == NULL) {
-        target = malloc(MAX_MEMORY_NEEDED);
+        char buffer[MAX_MEMORY_NEEDED];
+        target = buffer;
         strcpy(target, source);
     } else{
         strcat(target, source);
