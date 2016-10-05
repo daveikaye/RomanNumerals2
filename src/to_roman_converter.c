@@ -1,12 +1,9 @@
 #include <string.h>
-#include <stdlib.h>
 
-static char* concat_strings(char* target, const char* source) {
-    const int MAX_MEMORY_NEEDED = 20;
 
+static char* concat_strings(char* maxMemoryBuffer, char* target, const char* source) {
     if (target == NULL) {
-        char buffer[MAX_MEMORY_NEEDED];
-        target = buffer;
+        target = maxMemoryBuffer;
         strcpy(target, source);
     } else{
         strcat(target, source);
@@ -15,7 +12,7 @@ static char* concat_strings(char* target, const char* source) {
     return target;
 }
 
-char *to_roman(int arabic) {
+char *to_roman(char* maxMemoryBuffer, int arabic) {
     if (arabic > 3999) {
 
         return NULL;
@@ -29,7 +26,7 @@ char *to_roman(int arabic) {
     int i=0;
     for (i = 0; i < sizeof(numbers)/sizeof(int); i++) {
         while (arabic >= numbers[i]) {
-            roman = concat_strings(roman, letters[i]);
+            roman = concat_strings(maxMemoryBuffer, roman, letters[i]);
             arabic -= numbers[i];
         }
     }

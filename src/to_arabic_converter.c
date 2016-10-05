@@ -21,7 +21,7 @@ static int roman_digit_to_arabic(char *roman, int* i_ptr, int roman_length) {
     return number;
 }
 
-int to_arabic(char *roman)
+int to_arabic(char* maxMemoryBuffer, char *roman)
 {
     if (!is_roman_numeral_valid(roman)) {
 
@@ -38,7 +38,7 @@ int to_arabic(char *roman)
     if (arabic > MAX_ARABIC_VALUE || arabic < 1) {
         return -1;
     }
-    if (strcmp(to_roman(arabic),roman) != 0) {
+    if (strcmp(to_roman(maxMemoryBuffer, arabic),roman) != 0) {
 
         return -1;
     }

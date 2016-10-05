@@ -1,31 +1,31 @@
 #test adds_roman_numerals_whose_sum_is_less_than_max
-    ck_assert_str_eq(add("IV", "V"), "IX");
+    ck_assert_str_eq(add(malloc(MAX_MEMORY_NEEDED), "IV", "V"), "IX");
 
 #test adds_roman_numerals_whose_sum_is_max
-    ck_assert_str_eq(add("MMMCMXCVIII", "I"), "MMMCMXCIX");
+    ck_assert_str_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCVIII", "I"), "MMMCMXCIX");
 
 #test add_roman_numerals_returns_NULL_when_sum_exceeds_max
-    ck_assert_ptr_eq(add("MMMCMXCIX", "I"), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCIX", "I"), NULL);
 
 #test add_roman_numerals_returns_NULL_for_invalid_augend_or_addend
-    ck_assert_ptr_eq(add("MMMCMXCX", "I"), NULL);
-    ck_assert_ptr_eq(add("MMMCMXCIX", NULL), NULL);
-    ck_assert_ptr_eq(add(NULL, "I"), NULL);
-    ck_assert_ptr_eq(add(NULL, NULL), NULL);
-    ck_assert_ptr_eq(add("dave", "rich"), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCX", "I"), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCIX", NULL), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), NULL, "I"), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), NULL, NULL), NULL);
+    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "dave", "rich"), NULL);
 
 #test subtracts_roman_numerals_whose_difference_is_greater_than_zero
-    ck_assert_str_eq(subtract("V", "IV"), "I");
+    ck_assert_str_eq(subtract(malloc(MAX_MEMORY_NEEDED), "V", "IV"), "I");
 
 #test subtract_roman_numerals_returns_NULL_when_difference_is_zero
-    ck_assert_ptr_eq(subtract("IV", "IV"), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", "IV"), NULL);
 
 #test subtract_roman_numerals_returns_NULL_when_difference_is_negative
-    ck_assert_ptr_eq(subtract("IV", "V"), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", "V"), NULL);
 
 #test subtract_roman_numerals_returns_NULL_for_invalid_minuend_or_subtrahend
-    ck_assert_ptr_eq(subtract("MMMCMXCX", "I"), NULL);
-    ck_assert_ptr_eq(subtract("IV", NULL), NULL);
-    ck_assert_ptr_eq(subtract(NULL, "I"), NULL);
-    ck_assert_ptr_eq(subtract(NULL, NULL), NULL);
-    ck_assert_ptr_eq(subtract("dave", "rich"), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "MMMCMXCX", "I"), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", NULL), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), NULL, "I"), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), NULL, NULL), NULL);
+    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "dave", "rich"), NULL);

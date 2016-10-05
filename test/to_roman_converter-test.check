@@ -1,53 +1,53 @@
 #test converts_1_to_roman
-    ck_assert_str_eq(to_roman(1), "I");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 1), "I");
 
 #test converts_2_to_roman
-    ck_assert_str_eq(to_roman(2), "II");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 2), "II");
 
 #test converts_4_to_roman
-    ck_assert_str_eq(to_roman(4), "IV");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 4), "IV");
 
 #test converts_5_to_roman
-    ck_assert_str_eq(to_roman(5), "V");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 5), "V");
 
 #test converts_9_to_roman
-    ck_assert_str_eq(to_roman(9), "IX");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 9), "IX");
 
 #test converts_10_to_roman
-    ck_assert_str_eq(to_roman(10), "X");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 10), "X");
 
 #test converts_40_to_roman
-    ck_assert_str_eq(to_roman(40), "XL");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 40), "XL");
 
 #test converts_50_to_roman
-    ck_assert_str_eq(to_roman(50), "L");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 50), "L");
 
 #test converts_90_to_roman
-    ck_assert_str_eq(to_roman(90), "XC");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 90), "XC");
 
 #test converts_100_to_roman
-    ck_assert_str_eq(to_roman(100), "C");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 100), "C");
 
 #test converts_400_to_roman
-    ck_assert_str_eq(to_roman(400), "CD");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 400), "CD");
 
 #test converts_500_to_roman
-    ck_assert_str_eq(to_roman(500), "D");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 500), "D");
 
 #test converts_900_to_roman
-    ck_assert_str_eq(to_roman(900), "CM");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 900), "CM");
 
 #test converts_1000_to_roman
-    ck_assert_str_eq(to_roman(1000), "M");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 1000), "M");
 
 #test converts_max_to_roman
-    ck_assert_str_eq(to_roman(3999), "MMMCMXCIX");
+    ck_assert_str_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 3999), "MMMCMXCIX");
 
 #test convert_to_roman_returns_null_for_negative_arabic
-    ck_assert_ptr_eq(to_roman(-1), NULL);
+    ck_assert_ptr_eq(to_roman(malloc(MAX_MEMORY_NEEDED), -1), NULL);
 
 #test convert_to_roman_returns_null_for_zero_arabic
-    ck_assert_ptr_eq(to_roman(0), NULL);
+    ck_assert_ptr_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 0), NULL);
 
 #test convert_to_roman_returns_null_for_greater_than_max_arabic
-    ck_assert_ptr_eq(to_roman(4000), NULL);
+    ck_assert_ptr_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 4000), NULL);

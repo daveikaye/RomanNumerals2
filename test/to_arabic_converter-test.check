@@ -1,32 +1,32 @@
 #test converts_II_to_arabic
-    ck_assert_int_eq(to_arabic("II"), 2);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "II"), 2);
 
 #test converts_IV_to_arabic
-    ck_assert_int_eq(to_arabic("IV"), 4);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "IV"), 4);
 
 #test converts_max_roman_to_arabic
-    ck_assert_int_eq(to_arabic("MMMCMXCIX"), 3999);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "MMMCMXCIX"), 3999);
 
 #test convert_to_arabic_returns_negative_one_when_roman_is_greater_than_max
-    ck_assert_int_eq(to_arabic("MMMCMXCX"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "MMMCMXCX"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_sequence_of_roman_letters_is_invalid
-    ck_assert_int_eq(to_arabic("IXI"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "IXI"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_four_Is_in_a_row
-    ck_assert_int_eq(to_arabic("IIII"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "IIII"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_four_Xs_in_a_row
-    ck_assert_int_eq(to_arabic("XXXX"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "XXXX"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_four_Cs_in_a_row
-    ck_assert_int_eq(to_arabic("CCCC"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "CCCC"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_two_Vs_in_a_row
-    ck_assert_int_eq(to_arabic("VV"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "VV"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_two_Ls_in_a_row
-    ck_assert_int_eq(to_arabic("LL"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "LL"), -1);
 
 #test convert_to_arabic_returns_negative_one_when_there_are_two_Ds_in_a_row
-    ck_assert_int_eq(to_arabic("DD"), -1);
+    ck_assert_int_eq(to_arabic(malloc(MAX_MEMORY_NEEDED), "DD"), -1);
