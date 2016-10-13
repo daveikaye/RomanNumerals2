@@ -1,5 +1,7 @@
 #test adds_roman_numerals_whose_sum_is_less_than_max
-    ck_assert_str_eq(add(malloc(MAX_MEMORY_NEEDED), "IV", "V"), "IX");
+    char* maxMemoryBuffer = malloc(MAX_MEMORY_NEEDED);
+    ck_assert_str_eq(add(maxMemoryBuffer, "IV", "V"), "IX");
+    free(maxMemoryBuffer);
 
 #test adds_roman_numerals_whose_sum_is_max
     ck_assert_str_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCVIII", "I"), "MMMCMXCIX");
