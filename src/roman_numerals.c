@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #include "to_roman_converter.h"
 #include "to_arabic_converter.h"
