@@ -1,33 +1,31 @@
 #test adds_roman_numerals_whose_sum_is_less_than_max
-    char* maxMemoryBuffer = malloc(MAX_MEMORY_NEEDED);
     ck_assert_str_eq(add(maxMemoryBuffer, "IV", "V"), "IX");
-    free(maxMemoryBuffer);
 
 #test adds_roman_numerals_whose_sum_is_max
-    ck_assert_str_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCVIII", "I"), "MMMCMXCIX");
+    ck_assert_str_eq(add(maxMemoryBuffer, "MMMCMXCVIII", "I"), "MMMCMXCIX");
 
 #test add_roman_numerals_returns_NULL_when_sum_exceeds_max
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCIX", "I"), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, "MMMCMXCIX", "I"), NULL);
 
 #test add_roman_numerals_returns_NULL_for_invalid_augend_or_addend
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCX", "I"), NULL);
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "MMMCMXCIX", NULL), NULL);
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), NULL, "I"), NULL);
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), NULL, NULL), NULL);
-    ck_assert_ptr_eq(add(malloc(MAX_MEMORY_NEEDED), "dave", "rich"), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, "MMMCMXCX", "I"), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, "MMMCMXCIX", NULL), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, NULL, "I"), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, NULL, NULL), NULL);
+    ck_assert_ptr_eq(add(maxMemoryBuffer, "dave", "rich"), NULL);
 
 #test subtracts_roman_numerals_whose_difference_is_greater_than_zero
-    ck_assert_str_eq(subtract(malloc(MAX_MEMORY_NEEDED), "V", "IV"), "I");
+    ck_assert_str_eq(subtract(maxMemoryBuffer, "V", "IV"), "I");
 
 #test subtract_roman_numerals_returns_NULL_when_difference_is_zero
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", "IV"), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, "IV", "IV"), NULL);
 
 #test subtract_roman_numerals_returns_NULL_when_difference_is_negative
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", "V"), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, "IV", "V"), NULL);
 
 #test subtract_roman_numerals_returns_NULL_for_invalid_minuend_or_subtrahend
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "MMMCMXCX", "I"), NULL);
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "IV", NULL), NULL);
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), NULL, "I"), NULL);
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), NULL, NULL), NULL);
-    ck_assert_ptr_eq(subtract(malloc(MAX_MEMORY_NEEDED), "dave", "rich"), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, "MMMCMXCX", "I"), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, "IV", NULL), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, NULL, "I"), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, NULL, NULL), NULL);
+    ck_assert_ptr_eq(subtract(maxMemoryBuffer, "dave", "rich"), NULL);

@@ -51,3 +51,6 @@
 
 #test convert_to_roman_returns_null_for_greater_than_max_arabic
     ck_assert_ptr_eq(to_roman(malloc(MAX_MEMORY_NEEDED), 4000), NULL);
+
+#main-pre
+    tcase_add_checked_fixture(tc1_1, mp_setup, mp_teardown);
