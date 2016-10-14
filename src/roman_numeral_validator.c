@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #include "roman_letter_to_arabic_number_converter.h"
 
@@ -14,7 +13,7 @@ static bool basic_roman_numeral_validation_passed(char* roman) {
 
 static bool is_valid_roman_letter(char roman_letter) {
     int arabic = roman_letter_to_arabic_number(roman_letter);
-    if (arabic == -1) {
+    if (arabic == INVALID_ARABIC_VALUE) {
 
         return false;
     }
