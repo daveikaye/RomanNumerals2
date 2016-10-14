@@ -20,7 +20,7 @@ implementation-test.o: implementation-test.c
 	$(COMPILER) $(CFLAGS) -c implementation-test.c
 
 implementation-test.c:
-	checkmk test/*.check >implementation-test.c
+	checkmk test/first.check test/*test.check test/last.check >implementation-test.c
 
 clean:
 	$(RM) *.o *.c romannumerals-test
